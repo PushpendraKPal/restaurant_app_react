@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(214, 36, 4);
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.imageContainer {
+  text-align: center;
+}
+.image {
+  width: 100%;
+}
+.mainHeading {
+  color: whitesmoke;
+}
