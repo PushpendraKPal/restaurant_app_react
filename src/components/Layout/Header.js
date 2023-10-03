@@ -1,6 +1,7 @@
 import headerImage from "../../assets/images/header.jpg";
 import CartButton from "../Cart/CartButton";
 import classes from "./Header.module.css";
+import Summary from "./Summary";
 
 const Header = (props) => {
   return (
@@ -11,6 +12,7 @@ const Header = (props) => {
       </header>
       <div className={classes.imageContainer}>
         <img src={headerImage} className={classes.image}></img>
+        <Summary></Summary>
       </div>
     </>
   );
