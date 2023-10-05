@@ -1,0 +1,14 @@
+.controlContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+}
+.symbol {
+  color: tomato;
+  cursor: pointer;
+  user-select: none;
+}
+
+.value {
+  color: rgb(75, 75, 75);
+}

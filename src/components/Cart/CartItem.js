@@ -1,19 +1,24 @@
-import { useState } from "react";
-import IncreaseQty from "../Meals/IncreaseQty";
-import classes from "./cart.module.css";
+import QuantityChanger from "../UI/QuantityChanger";
+import Button from "../UI/button";
+import classes from "./CartItem.module.css";
 
-const CartItem = ({ item, cartItems, setCartItem }) => {
-  const [qty, setQty] = useState(item.qty);
+const CartItem = ({ item }) => {
+  const handleClick = () => {};
+
   return (
-    <li>
-      <div className={classes.cartItemContainer}>
-        <div>{item.foodName}</div>
-        <div>{item.price}</div>
+    <div className={classes.cartItemContainer}>
+      <div>
+        <div className={classes.name}>{item.foodName}</div>
+        <div className={classes.price}>{`$ ${item.price}`}</div>
       </div>
-      <din>
-        <IncreaseQty setQty={setQty} itemQty={qty}></IncreaseQty>
-      </din>
-    </li>
+      <div>{`x ${item.qty}`}</div>
+      <div className={classes.qtyControl}>
+        <div className={classes.conContainer}>
+          <QuantityChanger></QuantityChanger>
+          <Button handleClick={handleClick} btnText={`REMOVE`}></Button>
+        </div>
+      </div>
+    </div>
   );
 };
 

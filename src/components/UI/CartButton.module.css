@@ -1,0 +1,17 @@
+.cartBtn {
+  background-color: white;
+  color: tomato;
+  border-radius: 10px;
+  padding: 10px 15px 10px 15px;
+  width: 120px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.cartBtn:hover {
+  color: brown;
+}

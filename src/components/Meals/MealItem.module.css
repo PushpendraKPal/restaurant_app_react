@@ -1,0 +1,29 @@
+.mealItemContainer {
+  margin: 0;
+  border-bottom: 2px solid rgb(200, 200, 200);
+  margin-bottom: 15px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.textContainer {
+}
+
+.name {
+  color: rgb(50, 50, 50);
+  font-size: 16px;
+  font-weight: bold;
+}
+.about {
+  font-size: 14px;
+  color: rgb(100, 100, 100);
+  padding: 6px;
+}
+.price {
+  color: tomato;
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 6px;
+}

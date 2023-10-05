@@ -1,0 +1,17 @@
+.btn {
+  padding: 6px 0 6px 0;
+  font-weight: bold;
+  color: white;
+  background-color: tomato;
+  outline-style: none;
+  border: solid 1px white;
+  font-size: 12px;
+  width: 100px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn:hover {
+  border: solid 1px tomato;
+  background-color: white;
+  color: tomato;
+}

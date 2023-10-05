@@ -1,0 +1,27 @@
+.cartItemContainer {
+  display: grid;
+  grid-template-columns: 3fr 1fr 2fr;
+  border-bottom: 2px solid rgb(200, 200, 200);
+  padding: 15px;
+  color: rgb(50, 50, 50);
+}
+
+.name {
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(50, 50, 50);
+  margin-bottom: 5px;
+}
+
+.price {
+  color: tomato;
+  font-size: 15px;
+  font-weight: bold;
+}
+.qtyControl {
+  display: flex;
+  justify-content: end;
+}
+.conContainer {
+  width: 100px;
+}

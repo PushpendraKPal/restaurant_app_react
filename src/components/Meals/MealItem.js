@@ -1,32 +1,21 @@
-import IncreaseQty from "./IncreaseQty";
-import classes from "./Meal.module.css";
-import { useState } from "react";
+import classes from "./MealItem.module.css";
+import QuantityChanger from "./MealQuantityChanger";
 
-const MealItem = ({ item, addToCart, cartItems }) => {
-  const [itemQty, setQty] = useState(1);
-  const [click, setClick] = useState(false);
-
-  const handleAdd = () => {
-    addToCart([...cartItems, { ...item, qty: itemQty }]);
-    setClick(true);
+const MealItem = ({ item }) => {
+  const addToCart = () => {
+    console.log("added to cart");
   };
-
   return (
-    <div className={classes.mealItem}>
-      <div>
-        <p className={`${classes.bold} ${classes.font20}`}>{item.foodName}</p>
-        <p>{item.aboutFood}</p>
-        <p className={classes.bold}>{`$${item.price}`}</p>
+    <div className={classes.mealItemContainer}>
+      <div className={classes.textContainer}>
+        <div className={classes.name}>{item.foodName}</div>
+        <div className={classes.about}>{item.aboutFood}</div>
+        <div className={classes.price}>{`$ ${item.price}`}</div>
       </div>
-      <div>
-        <IncreaseQty itemQty={itemQty} setQty={setQty}></IncreaseQty>
-        <button
-          className={!click ? classes.addBtn : classes.addBtnGreen}
-          onClick={handleAdd}
-        >
-          +Add
-        </button>
-      </div>
+      <QuantityChanger
+        btnText={`ADD TO CART`}
+        handleClick={addToCart}
+      ></QuantityChanger>
     </div>
   );
 };

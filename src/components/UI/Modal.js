@@ -1,5 +1,5 @@
-import classes from "./Model.module.css";
 import ReactDOM from "react-dom";
+import classes from "./Modal.module.css";
 
 const Backdrop = (props) => {
   return <div className={classes.backdrop}></div>;
@@ -7,13 +7,13 @@ const Backdrop = (props) => {
 
 const ModelOverlay = (props) => {
   return (
-    <div className={classes.model}>
+    <div className={classes.modal}>
       <div className={classes.content}>{props.children}</div>
     </div>
   );
 };
 
-const Model = (props) => {
+const Modal = (props) => {
   return (
     <>
       {ReactDOM.createPortal(
@@ -28,4 +28,4 @@ const Model = (props) => {
   );
 };
 
-export default Model;
+export default Modal;
