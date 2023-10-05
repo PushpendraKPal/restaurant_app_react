@@ -1,27 +1,28 @@
+import classes from "./cart.module.css";
 import Model from "../UI/Modal";
+import CartItem from "./CartItem";
 
-const Cart = ({ showModal }) => {
-  const cartItems = [
-    {
-      id: 124,
-      foodName: "Sushi",
-      aboutFood: "sushi is a Japenees dish",
-      price: 22.5,
-    },
-  ];
+const Cart = ({ showModal, cartItems }) => {
+  const totalPrice = cartItems.reduce((acc, curr) => {
+    return acc + curr.price;
+  }, 0);
   return (
     <Model>
+      <h2>Cart</h2>
       <ul>
         {cartItems.map((item) => (
-          <li>
-            <div>{item.foodName}</div>
-            <div>{item.price}</div>
-          </li>
+          <CartItem item={item}></CartItem>
         ))}
       </ul>
+      <div>{`Total Price = $ ${totalPrice}`}</div>
       <div>
-        <button onClick={() => showModal(false)}>Cancel</button>
-        <button>Order</button>
+        <button
+          className={classes.cartListBtn}
+          onClick={() => showModal(false)}
+        >
+          Cancel
+        </button>
+        <button className={classes.cartListBtn}>Order</button>
       </div>
     </Model>
   );

@@ -64,17 +64,38 @@ const foodArray = [
   },
 ];
 
+const cartArray = [
+  {
+    id: 124,
+    foodName: "Sushi",
+    aboutFood: "sushi is a Japenees dish",
+    price: 22.5,
+    qty: 0,
+  },
+  {
+    id: 125,
+    foodName: "Sushi with Eggs",
+    aboutFood: "sushi is a Japenees dish with Eggs",
+    price: 10,
+    qty: 0,
+  },
+];
+
 function App() {
-  const [mealItems, setMealItems] = useState(foodArray);
-  const [cartItem, setCartItem] = useState([]);
-  const [cartCount, setCartCount] = useState(0);
+  const [mealItems, setMealItems] = useState([...foodArray]);
+  const [cartItems, setCartItem] = useState([...cartArray]);
+  const [cartCount, setCartCount] = useState(cartItems.length);
   const [modal, setModal] = useState(false);
 
   return (
     <>
-      {modal && <Cart showModal={setModal}></Cart>}
+      {modal && <Cart showModal={setModal} cartItems={cartItems}></Cart>}
       <Header cartCount={cartCount} showModal={setModal}></Header>
-      <MealList mealItems={mealItems}></MealList>
+      <MealList
+        mealItems={mealItems}
+        addToCart={setCartItem}
+        cartItems={cartItems}
+      ></MealList>
     </>
   );
 }
