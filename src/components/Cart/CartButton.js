@@ -1,13 +1,12 @@
 import { useState } from "react";
 import classes from "./CartButton.module.css";
 
-const CartButton = () => {
-  const [qty, setQty] = useState(0);
+const CartButton = ({ cartCount, showModal }) => {
   return (
-    <button className={classes.cartButton}>
+    <button className={classes.cartButton} onClick={() => showModal(true)}>
       <span className={`material-symbols-outlined`}> shopping_cart </span>
       Your Cart
-      <span className={classes.qty}> {qty} </span>
+      <span className={classes.qty}> {cartCount} </span>
     </button>
   );
 };

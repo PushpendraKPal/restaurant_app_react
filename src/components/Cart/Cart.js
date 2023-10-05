@@ -1,6 +1,6 @@
 import Model from "../UI/Modal";
 
-const Cart = () => {
+const Cart = ({ showModal }) => {
   const cartItems = [
     {
       id: 124,
@@ -20,7 +20,7 @@ const Cart = () => {
         ))}
       </ul>
       <div>
-        <button>Cancel</button>
+        <button onClick={() => showModal(false)}>Cancel</button>
         <button>Order</button>
       </div>
     </Model>
