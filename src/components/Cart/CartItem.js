@@ -1,11 +1,18 @@
+import { useState } from "react";
+import IncreaseQty from "../Meals/IncreaseQty";
 import classes from "./cart.module.css";
 
-const CartItem = ({ item }) => {
+const CartItem = ({ item, cartItems, setCartItem }) => {
+  const [qty, setQty] = useState(item.qty);
   return (
-    <li className={classes.cartItemContainer}>
-      <div>{item.foodName}</div>
-      <div>{item.price}</div>
-      <div>{item.qty}</div>
+    <li>
+      <div className={classes.cartItemContainer}>
+        <div>{item.foodName}</div>
+        <div>{item.price}</div>
+      </div>
+      <din>
+        <IncreaseQty setQty={setQty} itemQty={qty}></IncreaseQty>
+      </din>
     </li>
   );
 };

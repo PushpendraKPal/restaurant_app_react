@@ -2,8 +2,15 @@ import IncreaseQty from "./IncreaseQty";
 import classes from "./Meal.module.css";
 import { useState } from "react";
 
-const MealItem = ({ item, addToCart }) => {
+const MealItem = ({ item, addToCart, cartItems }) => {
   const [itemQty, setQty] = useState(1);
+  const [click, setClick] = useState(false);
+
+  const handleAdd = () => {
+    addToCart([...cartItems, { ...item, qty: itemQty }]);
+    setClick(true);
+  };
+
   return (
     <div className={classes.mealItem}>
       <div>
@@ -12,12 +19,11 @@ const MealItem = ({ item, addToCart }) => {
         <p className={classes.bold}>{`$${item.price}`}</p>
       </div>
       <div>
-        <IncreaseQty
-          addToCart={addToCart}
-          itemQty={itemQty}
-          setQty={setQty}
-        ></IncreaseQty>
-        <button className={classes.addBtn} onClick={handleAdd}>
+        <IncreaseQty itemQty={itemQty} setQty={setQty}></IncreaseQty>
+        <button
+          className={!click ? classes.addBtn : classes.addBtnGreen}
+          onClick={handleAdd}
+        >
           +Add
         </button>
       </div>

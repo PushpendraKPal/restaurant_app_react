@@ -2,16 +2,20 @@ import classes from "./cart.module.css";
 import Model from "../UI/Modal";
 import CartItem from "./CartItem";
 
-const Cart = ({ showModal, cartItems }) => {
+const Cart = ({ showModal, cartItems, setCartItem }) => {
   const totalPrice = cartItems.reduce((acc, curr) => {
-    return acc + curr.price;
+    return acc + curr.price * curr.qty;
   }, 0);
   return (
     <Model>
       <h2>Cart</h2>
       <ul>
         {cartItems.map((item) => (
-          <CartItem item={item}></CartItem>
+          <CartItem
+            item={item}
+            cartItems={cartItems}
+            setCartItem={setCartItem}
+          ></CartItem>
         ))}
       </ul>
       <div>{`Total Price = $ ${totalPrice}`}</div>

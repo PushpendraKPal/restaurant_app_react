@@ -1,31 +1,32 @@
 import { useState } from "react";
 import classes from "./Meal.module.css";
 
-const IncreaseQty = ({ addToCart, setQty, itemQty }) => {
-  const [value, setValue] = useState(itemQty);
-
-  const handleChange = (e) => {
-    setValue(() => e.target.value);
+const IncreaseQty = ({ setQty, itemQty }) => {
+  const increment = () => {
+    setQty((pre) => {
+      if (pre < 5 && pre > 0) return pre + 1;
+      else return 5;
+    });
   };
-
-  const handleSubmit = () => {
-    setQty(value);
+  const decrement = () => {
+    setQty((pre) => {
+      if (pre < 6 && pre > 1) return pre - 1;
+      else return 1;
+    });
   };
 
   return (
     <div className={classes.increaseQty}>
-      <form onSubmit={handleSubmit}>
-        <label>Amount</label>
-        <input
-          type="number"
-          className={classes.inputAmount}
-          min="1"
-          max="5"
-          step="1"
-          defaultValue="1"
-          onChange={handleChange}
-        ></input>
-      </form>
+      <label>Quantity</label>
+      <div className={classes.qtyContainer}>
+        <div className={classes.handlerBtn} onClick={decrement}>
+          -
+        </div>
+        <div className={classes.qty}>{itemQty}</div>
+        <div className={classes.handlerBtn} onClick={increment}>
+          +
+        </div>
+      </div>
     </div>
   );
 };

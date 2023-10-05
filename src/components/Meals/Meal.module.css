@@ -45,8 +45,30 @@
   margin-top: 10px;
   width: 100%;
   border-radius: 5px;
-  padding: 2px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   background-color: rgb(214, 36, 4);
   color: whitesmoke;
   font-weight: bold;
+}
+.addBtnGreen {
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 5px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: rgb(1, 145, 37);
+  color: whitesmoke;
+  font-weight: bold;
+}
+
+.qtyContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  margin-top: 5px;
+}
+.handlerBtn {
+  padding: 1px;
+  border: 1px solid tomato;
+  cursor: pointer;
 }
