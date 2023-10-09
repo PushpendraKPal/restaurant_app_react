@@ -1,11 +1,20 @@
 import Button from "../UI/button";
 import QuantityChanger from "../UI/QuantityChanger";
 
-const MealQuantityChanger = ({ btnText, handleClick }) => {
+const MealQuantityChanger = ({
+  value,
+  setValue,
+  btnText,
+  handleClick,
+  add,
+}) => {
   return (
     <div>
-      <QuantityChanger></QuantityChanger>
-      <Button btnText={btnText} handleClick={handleClick}>
+      <QuantityChanger
+        value={value}
+        setValue={add ? setValue : () => {}}
+      ></QuantityChanger>
+      <Button btnText={btnText} handleClick={handleClick} add={add}>
         {btnText}
       </Button>
     </div>

@@ -2,6 +2,7 @@ import CartList from "./components/Cart/CartList";
 import Header from "./components/Header/Header";
 import MealList from "./components/Meals/MealList";
 import { useState } from "react";
+import Context from "./components/context/Context";
 const cartArray = [
   {
     id: 2,
@@ -13,13 +14,13 @@ const cartArray = [
 ];
 
 function App() {
-  const [layover, setLayover] = useState(false);
+  const [layover, setLayover] = useState(true);
   return (
-    <>
-      <Header showModal={setLayover}></Header>
+    <Context>
+      <Header setLayover={setLayover}></Header>
       <MealList></MealList>
       {layover && <CartList setLayover={setLayover}></CartList>}
-    </>
+    </Context>
   );
 }
 

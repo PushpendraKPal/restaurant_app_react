@@ -1,9 +1,7 @@
 import classes from "./QuantityChanger.module.css";
-import { useState } from "react";
 
-const QuantityChanger = () => {
-  const [value, setValue] = useState(1);
-
+const QuantityChanger = (props) => {
+  const { value, setValue, handleChange } = props;
   const handleIncrement = () => {
     setValue((pre) => {
       if (pre <= 4 && pre >= 1) {
@@ -12,6 +10,7 @@ const QuantityChanger = () => {
         return 5;
       }
     });
+    handleChange && handleChange();
   };
 
   const handleDecrement = () => {
@@ -22,6 +21,7 @@ const QuantityChanger = () => {
         return 1;
       }
     });
+    handleChange && handleChange();
   };
 
   return (

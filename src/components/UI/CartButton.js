@@ -1,9 +1,16 @@
 import classes from "./CartButton.module.css";
+import { CartState } from "../context/Context";
 
-const CartButton = ({ showModal }) => {
-  const cartCount = 10;
+const CartButton = (props) => {
+  const { state } = CartState();
+
+  const cartCount = state.cart.reduce((acc, curr) => {
+    return acc + curr.qty;
+  }, 0);
+
   return (
-    <div className={classes.cartBtn} onClick={() => showModal(true)}>
+    //<button onClick={props.handleClick}>Click me</button>
+    <div className={classes.cartBtn} onClick={props.handleClick}>
       <span className="material-symbols-outlined">shopping_cart</span>
       <span>{`Cart`}</span>
       <span>{cartCount}</span>

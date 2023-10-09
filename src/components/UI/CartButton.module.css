@@ -1,5 +1,6 @@
 .cartBtn {
   background-color: white;
+  outline-style: none;
   color: tomato;
   border-radius: 10px;
   padding: 10px 15px 10px 15px;
