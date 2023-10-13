@@ -16,10 +16,10 @@ const ModelOverlay = (props) => {
 const Modal = (props) => {
   return (
     <>
-      {ReactDOM.createPortal(
+      {/* {ReactDOM.createPortal(
         <Backdrop>{props.children}</Backdrop>,
         document.getElementById("overlays")
-      )}
+      )} */}
       {ReactDOM.createPortal(
         <ModelOverlay>{props.children}</ModelOverlay>,
         document.getElementById("overlays")

@@ -14,12 +14,16 @@ const cartArray = [
 ];
 
 function App() {
-  const [layover, setLayover] = useState(true);
+  const [layover, setLayover] = useState(false);
   return (
     <Context>
-      <Header setLayover={setLayover}></Header>
-      <MealList></MealList>
       {layover && <CartList setLayover={setLayover}></CartList>}
+      {!layover && (
+        <div>
+          <Header setLayover={setLayover}></Header>
+          <MealList></MealList>
+        </div>
+      )}
     </Context>
   );
 }

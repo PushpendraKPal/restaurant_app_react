@@ -11,6 +11,7 @@
   min-width: 500px;
   max-width: 50%;
   margin: auto;
+  margin-top: 50px;
 }
 
 .btnContainer {
@@ -19,4 +20,10 @@
   padding-bottom: 50px;
   gap: 20px;
   padding-right: 15px;
+}
+.heading {
+  font-size: 2rem;
+  color: tomato;
+  padding: 10px;
+  border-bottom: solid 2px rgb(192, 192, 192);
 }

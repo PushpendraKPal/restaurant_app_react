@@ -27,6 +27,7 @@ const CartList = ({ setLayover }) => {
   return (
     <>
       <div className={classes.cartListContainer}>
+        <h1 className={classes.heading}>Cart</h1>
         {cartList.map((ele) => {
           return (
             <CartItem item={ele} key={ele.id} cartList={cartList}></CartItem>
@@ -34,7 +35,7 @@ const CartList = ({ setLayover }) => {
         })}
         <div className={classes.totalPrice}>{`Total Price: ${totalPrice}`}</div>
         <div className={classes.btnContainer}>
-          <Button onClick={handleCancel} btnText={`CANCEL`}></Button>
+          <Button handleClick={handleCancel} btnText={`CANCEL`}></Button>
           <Button
             onClick={handleOrder}
             btnText={`ORDER`}

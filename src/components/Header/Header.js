@@ -5,7 +5,7 @@ import Summary from "../UI/Summary";
 
 const Header = ({ setLayover }) => {
   const handleClick = () => {
-    console.log("helo Modal");
+    setLayover(true);
   };
   return (
     <>
