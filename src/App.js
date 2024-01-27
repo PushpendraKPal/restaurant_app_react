@@ -13,6 +13,11 @@ const cartArray = [
   },
 ];
 
+// for github
+function print() {
+  console.log("Print");
+}
+
 function App() {
   const [layover, setLayover] = useState(false);
   return (
